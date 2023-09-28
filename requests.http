@@ -1,0 +1,54 @@
+
+@baseUrl = http://localhost:8080
+
+GET {{baseUrl}}/user/1
+Content-Type: application/json
+
+
+###
+
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+    "name": "test_user5",
+    "sd": "zzz"
+}
+
+###
+
+POST {{baseUrl}}/adv
+Content-Type: application/json
+
+{
+    "title": "adv 89df12",
+    "description": "adv description 2",
+    "owner_id": "1"
+}
+
+###
+GET {{baseUrl}}/adv
+Content-Type: application/json
+
+{
+    "user_id": "1"
+}
+
+###
+
+PATCH {{baseUrl}}/adv/1/1
+Content-Type: application/json
+
+{
+    "title": "new title1",
+    "description": "new description12"
+}
+
+###
+DELETE {{baseUrl}}/adv
+Content-Type: application/json
+
+{
+    "id": "21",
+    "owner_id": "1"
+}

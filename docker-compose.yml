@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+
+  posgres_db:
+    image: postgres:latest
+    container_name: aiohttp_hw_postgres_base
+    ports:
+      - "5400:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 7s
+      timeout: 15s
+      retries: 5
+      start_period: 30s
+    environment:
+      POSTGRES_DB: "aiohttp_hw_db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "111"
